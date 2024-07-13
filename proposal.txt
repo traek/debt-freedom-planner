@@ -1,0 +1,52 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+1. What is the title of your program?
+
+    Debt Freedom Planner
+
+2. What real-world problem will your program address or help to solve?
+
+    Help get people out of debt faster by comparing the 'debt snowball' and 'debt avalanch' methods to pay down higher interest rate debt faster or get early wins to motivate continued progress. Then present the user with a choice of which way to go and help them customize and implement the plan.
+
+3. What will you learn from developing this program?
+
+    I will be working with SQLite for the first time (with Python), to organize different accounts and to plan and track adherence. I will learn how to import user data from CSV into the database as well as be able to export the user-selected plan to CSV for use in other programs. I hope to use this to understand how to handle user interaction with a user over multiple sessions since this can a lot to input in one sitting.
+
+4. What Python modules will your program use?
+
+    sqlite3, datetime, pytest, os, csv
+
+5. List the names of functions you will need?
+
+    format_money
+    format_percentage
+    import_debts
+    export_plan
+    add_debt
+    add_plan
+    load_debts
+    load_plan
+    calculate_current_payoff
+    calculate_snowball
+    calculate_avalanch
+    generate_csv_template
+
+6. List the names of the test functions you will write.
+
+    test_format_money
+    test_format_percentage
+    test_add_debt
+    test_add_plan
+    test_calculate_current_payoff
+    test_calculate_snowball
+    test_calcluate_avalanch
+    test_generate_csv_template
