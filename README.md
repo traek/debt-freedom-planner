@@ -11,4 +11,4 @@ The primary focus of the debt snowball is early success breeds longevity. If you
 For those serious about accelerating their way to financial independence as quickly as possible, this uses the same sequential, payment-additive technique as debt snowball but instead prioritizes debts with the highest interest rate first. This ensures more of your money is going toward principle but may leave those with bad financial habits less excitement.
 
 ### Customizable Plans
-The focus on this program, beyond helping users create a sustainable plan, is to allow them to customize their implementation of these plans. For example, some users may need to repay debt so they can free up the money for other needful things or upcoming changes. Users will be able to limit how much rolls over to the next payment or how many to roll up altogther. Of course, they will get to see how this will affect their debt freedom date and adjust accordingly.
+Currently the only available customization is how much additional money to add to the debt payments for the duration of the plan.
