@@ -19,8 +19,9 @@ doing any of the following:
    Date       (hours)   Description of Work
 ----------  ----------  -------------------------
 2024-07-13      1.5     Read articles on debt repayment and designed program, set up Git repository
-
-
+2024-07-15      2.5     Setup main and format functions; wrote and validated test functions for each.
+2024-07-18      2.0     Read up on match/case and attempted to implement it for my menu system; it DID. NOT. WORK. Kept coming up with an "irrefutable" error as I was trying to match to values contained in a CONSTANT. Rewrote the menu as a simple if/elif block instead. All for a menu!
+2024-07-20      8.0     Created main working code to add debts and calcuate both types of debt repayment schedules. Now generates a payoff date for each debt.
 
 2. In Canvas, submit this completed text file, your Python program, your
 Python test file, and any project data files such as .txt and .csv files and
