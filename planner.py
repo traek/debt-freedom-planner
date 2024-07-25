@@ -78,14 +78,14 @@ def main():
             menu.append(MENU_ADD_DEBT)
         else:
             menu.append(MENU_ADD_DEBT)
-            menu.append(MENU_REMOVE_DEBT)
+            # menu.append(MENU_REMOVE_DEBT)
             menu.append(MENU_LIST_DEBT)
         if len(snowball_plans) < 1 and len(debts) > 1:
             menu.append(MENU_GENERATE_PLAN)
         elif len(snowball_plans) > 1:
             menu.append(MENU_GENERATE_PLAN)
             menu.append(MENU_LIST_PLANS)
-            menu.append(MENU_EXPORT_PLANS)
+            # menu.append(MENU_EXPORT_PLANS)
         menu.append(MENU_INSTRUCTIONS+toggle)
         menu.append(MENU_EXIT)
         choices = menu_choices(menu)
@@ -262,11 +262,17 @@ def main():
                                     snowball_plans[current_debt] = [[current_debt, month_number, pmt, extra_available, pmt_principle, pmt_interest, total_balance[current_debt], total_interest[current_debt]]]
                         else:
                             balance = 0.0
-            for debt, column in snowball_plans.items():
-                for name, month_number, pmt, accelerate_amount, pmt_principle, pmt_interest, total_balance, total_interest in column:
-                    print(f"{format_month_year(add_months(dt.now(), month_number))} {name} {format_money(pmt)} {format_money(accelerate_amount)} ({format_money(pmt_principle)} {format_money(pmt_interest)}) [{format_money(total_balance)}] {format_money(total_interest)}")
         elif choices[index] == MENU_LIST_PLANS:
-            print(f"\n{ERROR_FEATURE_INCOMPLETE}\n")
+            for debt, column in snowball_plans.items():
+                if debt != "":
+                    print(f"\n{debt.upper()} Payoff Plan:")
+                    for name, month_number, pmt, accelerate_amount, pmt_principle, pmt_interest, total_balance, total_interest in column:
+                        if accelerate_amount == 0.0:
+                            accelerate_amount = ""
+                        else:
+                            accelerate_amount = f"+{format_money(accelerate_amount)} "
+                        print(f"{format_month_year(add_months(dt.now(), month_number))} {name} pmt: {format_money(pmt)} {accelerate_amount}(principle: {format_money(pmt_principle)} interest: {format_money(pmt_interest)}) (interest-to-date: {format_money(total_interest)}) [BALANCE: {format_money(total_balance)}]")
+            print()
         elif choices[index] == MENU_EXPORT_PLANS:
             print(f"\n{ERROR_FEATURE_INCOMPLETE}\n")
         elif choices[index] == MENU_INSTRUCTIONS+toggle:
