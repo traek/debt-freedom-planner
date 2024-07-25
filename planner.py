@@ -262,8 +262,6 @@ def main():
                                     snowball_plans[current_debt] = [[current_debt, month_number, pmt, extra_available, pmt_principle, pmt_interest, total_balance[current_debt], total_interest[current_debt]]]
                         else:
                             balance = 0.0
-                    if monthly_total > 0.0:
-                        print(f"[Total Payments {format_month_year(add_months(dt.now(), month_number))}] {format_money(monthly_total)}")
             for debt, column in snowball_plans.items():
                 for name, month_number, pmt, accelerate_amount, pmt_principle, pmt_interest, total_balance, total_interest in column:
                     print(f"{format_month_year(add_months(dt.now(), month_number))} {name} {format_money(pmt)} {format_money(accelerate_amount)} ({format_money(pmt_principle)} {format_money(pmt_interest)}) [{format_money(total_balance)}] {format_money(total_interest)}")
@@ -368,9 +366,9 @@ def menu_choices(options):
     return dictionary
 
 def add_months(current_date, months_to_add):
-    new_date = dt(current_date.year + (current_date.month + months_to_add - 1) // 12,
-                        (current_date.month + months_to_add - 1) % 12 + 1,
-                        current_date.day, current_date.hour, current_date.minute, current_date.second)
+    new_date = dt(
+        current_date.year + (current_date.month + months_to_add - 1) // 12,
+        (current_date.month + months_to_add - 1) % 12 + 1, current_date.day)
     return new_date
 
 def format_month_year(timestamp):
