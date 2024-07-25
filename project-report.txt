@@ -24,6 +24,7 @@ doing any of the following:
 2024-07-20      8.0     Created main working code to add debts and calcuate both types of debt repayment schedules. Now generates a payoff date for each debt. 
 2024-07-23      2.0     Wrote test logic to validate payments were level per month and found huge bug (logic); planning new version of generate schedules. Reconsidering using SQLite; may go with CSV due to time constraint (due tomorrow!)
 2024-07-24      7.5     Rewrote all scheduling logic because months were only generating payments for the accelerated debts and not any others. Had to rework data structure and create new mechanism to keep track of all payments at the same time, instead of by individual debts. Had several problems with dictionaries not displaying properly that I had to resolve. Still haven't added any save to disk feature. Will have to turn this in tomorrow after completing remaining functionality (after cutting anything non-essential)
+2024-07-25      3.0     Completed pytest functions for planner functions with simple returns, created display plan option, cleaned up display throughout, removed unused code, and validated all tests are succeeding. Not saving anything to disk at the moment but I have included test data for repeated runs for the grader.
 
 2. In Canvas, submit this completed text file, your Python program, your
 Python test file, and any project data files such as .txt and .csv files and
