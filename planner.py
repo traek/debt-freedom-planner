@@ -332,12 +332,16 @@ def data_entry(prompt, data_type):
     return data
 
 def display_debt_entry(debt, debtor, balance, interest, payment, estimated_payoff):
+    planned_payoff = get_debt_planned_payoff(debt)
     print(f"DEBT NAME:           {debt}")
     print(f"   Debtor:           {debtor}")
     print(f"   Current Balance:  {format_money(balance)}")
     print(f"   Interest Rate:    {format_percentage(interest)}")
     print(f"   Minimum Payment:  {format_money(payment)}")
-    print(f"   Estimated Payoff: {format_month_year(estimated_payoff)}\n")
+    print(f"   Projected Payoff: {format_month_year(estimated_payoff)}")
+    if planned_payoff > 0:
+        print(f"   Planned Payoff:   {format_month_year(add_months(dt.now(), planned_payoff))}")    
+    print()
     return
 
 def generate_standalone_schedule(principle, interest, payment, interest_to_date=0.0, start_at_payment=0):
@@ -363,6 +367,13 @@ def calculate_payoff(balance, interest, payment, start_date):
     months = period.calculate_amortization_period(balance, interest, payment)
     payoff = add_months(start_date, months)
     return payoff
+
+def get_debt_planned_payoff(debt):
+    try:
+        planned_payoff = snowball_plans[debt][-1][PLAN_MONTH_INDEX]
+    except:
+        planned_payoff = 0
+    return planned_payoff
 
 def menu_choices(options):
     dictionary = {}
